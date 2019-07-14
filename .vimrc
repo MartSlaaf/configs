@@ -94,3 +94,4 @@ com! DiffSaved call s:DiffWithSaved()
 nnoremap <F4> :DiffSaved<Enter>
 
 nnoremap <F5> :nohl
+nnoremap <Leader>z za
