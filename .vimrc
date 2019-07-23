@@ -42,6 +42,13 @@ Plugin 'davidhalter/jedi-vim'         " Jedi-vim autocomplete plugin
 "Plugin 'mitsuhiko/vim-jinja'        " Jinja support for vim
 "Plugin 'mitsuhiko/vim-python-combined'  " Combined Python 2/3 for Vim
 
+"----------------Markdown-----------------
+Plugin 'JamshedVesuna/vim-markdown-preview'
+let vim_markdown_preview_github=1
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
+
 call vundle#end()                    " required
 filetype on
 filetype plugin on
@@ -56,6 +63,8 @@ let g:jedi#popup_select_first = 0
 let g:pymode_rope_complete_on_dot = 1
 let g:pymode_doc = 0
 let g:pymode_rope = 1
+
+set tabstop=4 shiftwidth=4 expandtab
 
 set completeopt=menu "show completion menu without popup
 
