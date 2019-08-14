@@ -71,7 +71,7 @@ set completeopt=menu "show completion menu without popup
 :let mapleader=" "
 "autocmd vimenter * NERDTree
 "open Nerdtree by <l>f
-nnoremap <Leader>f :NERDTreeToggle<Enter> 
+nnoremap <Leader>t :NERDTreeToggle<Enter> 
 "close Nerdtree if it's last tab
 "autocmd bufenter * if (winnr(“$”) == 1 && exists(“b:NERDTreeType”) && b:NERDTreeType == “primary”) | q | endif
 
@@ -103,4 +103,4 @@ com! DiffSaved call s:DiffWithSaved()
 nnoremap <F4> :DiffSaved<Enter>
 
 nnoremap <F5> :nohl
-nnoremap <Leader>z za
+nnoremap <Leader>f za
