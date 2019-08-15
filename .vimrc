@@ -58,11 +58,19 @@ filetype plugin indent on
 
 let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
+let g:jedi#show_call_signatures = 2
 
 "-----------------PyMode config
 let g:pymode_rope_complete_on_dot = 1
-let g:pymode_doc = 0
+let g:pymode_doc = 1
 let g:pymode_rope = 1
+let g:pymode_folding = 0
+let g:pymode_options_colorcolumn = 0
+
+
+"-----------------Airline
+let g:airline_statusline_ontop=1
+set noshowmode
 
 set tabstop=4 shiftwidth=4 expandtab
 
@@ -82,8 +90,6 @@ let NERDTreeDirArrows = 1
 
 set hlsearch
 set fdm=indent
-let g:pymode_folding = 0
-let g:pymode_options_colorcolumn = 0
 let g:loaded_youcompleteme = 1
 vnoremap <silent> # :s/^/#/<cr>:noh<cr>
 vnoremap <silent> -# :s/^#//<cr>:noh<cr>
