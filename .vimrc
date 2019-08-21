@@ -59,6 +59,7 @@ filetype plugin indent on
 let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
 let g:jedi#show_call_signatures = 2
+set noshowmode
 
 "-----------------PyMode config
 let g:pymode_rope_complete_on_dot = 1
@@ -70,7 +71,7 @@ let g:pymode_options_colorcolumn = 0
 
 "-----------------Airline
 let g:airline_statusline_ontop=1
-set noshowmode
+set showtabline=2
 
 set tabstop=4 shiftwidth=4 expandtab
 
