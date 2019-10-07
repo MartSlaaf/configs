@@ -28,6 +28,7 @@ Plugin 'fisadev/FixedTaskList.vim'      " Pending tasks list
 Plugin 'tpope/vim-surround'           " Parentheses, brackets, quotes, XML tags, and more
 Plugin 'Valloric/YouCompleteMe' " New completion module
 Plugin 'jiangmiao/auto-pairs'    " Auto brackets close
+Plugin 'Yggdroot/indentLine'    " shows indentation level
 
 "--------------=== Snippets support ===---------------
 "Plugin 'garbas/vim-snipmate'        " Snippets manager
