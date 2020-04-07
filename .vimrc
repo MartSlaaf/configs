@@ -29,6 +29,9 @@ Plugin 'tpope/vim-surround'           " Parentheses, brackets, quotes, XML tags,
 Plugin 'Valloric/YouCompleteMe' " New completion module
 Plugin 'jiangmiao/auto-pairs'    " Auto brackets close
 Plugin 'Yggdroot/indentLine'    " shows indentation level
+let g:indentLine_concealcursor = 'nc'
+let g:indentLine_char = '│'
+let g:vim_json_syntax_conceal = 0
 
 "--------------=== Snippets support ===---------------
 "Plugin 'garbas/vim-snipmate'        " Snippets manager
@@ -46,6 +49,7 @@ Plugin 'davidhalter/jedi-vim'         " Jedi-vim autocomplete plugin
 "----------------Markdown-----------------
 Plugin 'JamshedVesuna/vim-markdown-preview'
 let vim_markdown_preview_github=1
+let vim_markdown_conceal = 0
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
@@ -58,7 +62,7 @@ filetype plugin indent on
 "----------------- JEDI config-------------------
 
 let g:jedi#popup_on_dot = 0
-let g:jedi#popup_select_first = 0
+let g:jedi#popup_select_first = 1
 let g:jedi#show_call_signatures = 2
 set noshowmode
 
