@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PWD=pwd
+PWD=$(pwd)
 
 install_zsh_locally () {
     echo "installing zsh locally"
@@ -57,7 +57,11 @@ vim +PluginInstall +qall
 # configure zsh
 echo "configuring zsh"
 
-ln -s $PWD/.zshrc $HOME/.zshrc
+FILE=$HOME/.zshrc
+if test -f "$FILE"; then
+    mv $FILE $HOME/.zshrc_b4
+fi
+ln -s $PWD/.zshrc $FILE
 
 # tmux config
 echo "configuring tmux"
