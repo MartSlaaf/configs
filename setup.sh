@@ -1,5 +1,37 @@
-PWD = pwd
+#!/bin/bash
 
+PWD=pwd
+
+install_zsh_locally () {
+    echo "installing zsh locally"
+    
+    # download
+    wget -O zsh.tar.xz https://sourceforge.net/projects/zsh/files/latest/download
+    mkdir zsh && unxz zsh.tar.xz && tar -xvf zsh.tar -C zsh --strip-components 1
+
+    # compile
+    cd zsh
+    ./configure --prefix=$HOME
+    make
+    make install
+
+    # clean up
+    cd ..
+    rm -rf zsh
+    rm zsh.tar
+    
+    # make it start from bash
+    echo 'export PATH="$HOME/bin:$PATH"' >> $HOME/.bashrc
+    echo "[ -f $HOME/bin/zsh   ] && exec $HOME/bin/zsh -l" >> $HOME/.bashrc
+
+    echo "installing oh-my-zsh"
+    
+    # add zsh to path
+    export PATH="$HOME/bin:$PATH"
+
+    # all in one
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+}
 
 for i in "$@"
 do
@@ -13,27 +45,6 @@ case $i in
 esac
 done
 
-function install_zsh_locally {
-    echo "installing zsh locally"
-    
-    # download
-    wget -O zsh.tar.xz https://sourceforge.net/projects/zsh/files/latest/download
-    mkdir zsh && unxz zsh.tar.xz && tar -xvf zsh.tar -C zsh --strip-components 1
-
-    # compile
-    cd zsh
-    ./configure --prefix=$HOME
-    make
-    make install
-    
-    # make it start from bash
-    echo "[ -f $HOME/bin/zsh   ] && exec $HOME/bin/zsh -l" >> $HOME/.bashrc
-
-    echo "installing oh-my-zsh"
-    
-    # all in one
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-}
 
 
 # configure vim
