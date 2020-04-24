@@ -23,6 +23,8 @@ Plugin 'scrooloose/nerdtree'             " Project and file navigation
 
 "------------------=== Other ===----------------------
 Plugin 'bling/vim-airline'               " Lean & mean status/tabline for vim
+Plugin 'vim-airline/vim-airline-themes'
+
 Plugin 'fisadev/FixedTaskList.vim'      " Pending tasks list
 "Plugin 'rosenfeld/conque-term'          " Consoles as buffers
 Plugin 'tpope/vim-surround'           " Parentheses, brackets, quotes, XML tags, and more
@@ -75,8 +77,14 @@ let g:pymode_options_colorcolumn = 0
 
 
 "-----------------Airline
-let g:airline_statusline_ontop=1
+"let g:airline_statusline_ontop=1
+let g:airline_theme='solarized'
 set showtabline=2
+let g:airline_solarized_bg='dark'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_tabs = 1
+
+
 
 set tabstop=4 shiftwidth=4 expandtab
 
