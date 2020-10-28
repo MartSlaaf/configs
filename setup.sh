@@ -28,9 +28,12 @@ install_zsh_locally () {
     
     # add zsh to path
     export PATH="$HOME/bin:$PATH"
+}
 
-    # all in one
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+i_have_sudo () {
+    echo "installing via apt-get: zsh, curl, powerline-fonts"
+
+    sudo apt-get install fonts-powerline zsh curl
 }
 
 for i in "$@"
@@ -39,6 +42,9 @@ case $i in
     --install-zsh-locally|-izl)
     install_zsh_locally
     ;;
+    --i-have-sudo|-ihs)
+    i_ve_sudo
+    ;;  
     *)
     echo "unrecognized option!"
     ;;
@@ -46,6 +52,8 @@ esac
 done
 
 
+# all in one
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 # configure vim
 echo "configuring vim"
