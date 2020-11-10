@@ -68,10 +68,8 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git
-         zsh-autosuggestions
-         vi-mode)
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=grey'
+plugins=(git)
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=grey'
 
 source $ZSH/oh-my-zsh.sh
 
