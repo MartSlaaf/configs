@@ -4,6 +4,8 @@ autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8
 
 set nu
 
+set t_Co=256
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set enc=utf-8	     " utf-8
@@ -121,6 +123,7 @@ function! s:DiffWithSaved()
 endfunction
 com! DiffSaved call s:DiffWithSaved()
 nnoremap <F4> :DiffSaved<Enter>
+
 
 nnoremap <F5> :nohl
 nnoremap <Leader>f za
