@@ -98,3 +98,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+tabview () {
+    cat $1 | sed 's/,/ ,/g' | column -t -s, | less -S
+}
+
+ftext () {
+    grep -iIHrn --color=always "$1" . | less -R -r
+    
+}
