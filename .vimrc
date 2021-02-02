@@ -109,10 +109,11 @@ set fdm=indent
 let g:loaded_youcompleteme = 1
 vnoremap <silent> # :s/^/#/<cr>:noh<cr>
 vnoremap <silent> -# :s/^#//<cr>:noh<cr>
-:command CurDiff w !diff % -
 set backspace=indent,eol,start
 syntax on
 let g:pymode_lint = 0
+
+:command CurDiff w !diff % -
 
 function! s:DiffWithSaved()
   let filetype=&ft
@@ -124,6 +125,12 @@ endfunction
 com! DiffSaved call s:DiffWithSaved()
 nnoremap <F4> :DiffSaved<Enter>
 
+" set 'updatetime' to 3 minutes when in insert mode
+au InsertEnter * let updaterestore = &updatetime | set updatetime=300000
+au InsertLeave * let &updatetime = updaterestore
+
+" automatically leave insert mode after 'updatetime' milliseconds of inaction
+au CursorHoldI * stopinsert
 
 nnoremap <F5> :nohl
 nnoremap <Leader>f za
