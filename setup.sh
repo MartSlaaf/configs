@@ -79,7 +79,7 @@ ln -s $PWD/.tmux.conf $HOME/.tmux.conf
 # config git
 echo "configuring git"
 
-ln -s $PWD/.gitignore $HOME/.gitignore
+ln -s $PWD/.gitignore $HOME/.gitignore-global
 git config --global core.editor "vim"
 git config --global core.excludesfile ~/.gitignore
 git config --global user.name "Yaroslav Zharov"

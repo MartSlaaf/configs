@@ -22,3 +22,12 @@ tags
 [._]*.un~
 
 # End of https://www.gitignore.io/api/vim
+#
+# Rope
+.ropeproject
+
+# compiled
+__pycache__/
+
+# ipynb
+.ipynb_checkpoints
