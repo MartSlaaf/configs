@@ -126,11 +126,11 @@ com! DiffSaved call s:DiffWithSaved()
 nnoremap <F4> :DiffSaved<Enter>
 
 " set 'updatetime' to 3 minutes when in insert mode
-au InsertEnter * let updaterestore = &updatetime | set updatetime=300000
-au InsertLeave * let &updatetime = updaterestore
+" au InsertEnter * let updaterestore = &updatetime | set updatetime=300000
+" au InsertLeave * let &updatetime = updaterestore
 
 " automatically leave insert mode after 'updatetime' milliseconds of inaction
-au CursorHoldI * stopinsert
+" au CursorHoldI * stopinsert
 
 nnoremap <F5> :nohl
 nnoremap <Leader>f za
